@@ -27,5 +27,7 @@ class TestController extends Controller
         $total_amount = 0.01;
         $subject = '测试订单' . $out_trade_no;
 
+        $a=1;
+
     }
 }
