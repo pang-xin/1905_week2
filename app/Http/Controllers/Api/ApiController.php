@@ -70,5 +70,36 @@ class ApiController extends Controller
         $count=Redis::incr($redis_key);
         echo 'count:'.$count;
     }
-    
+
+    public function encryption(Request $request)
+    {
+        $str=$request->input('str');
+        $lengh=strlen($str);
+        $data="";
+        for($i=0;$i<$lengh;$i++)
+        {
+            $a=ord($str[$i])+3;
+            $chr =chr($a);
+            $data .=$chr;
+        }
+        echo $data;
+    }
+
+    /**
+     * 解密
+     */
+    public function decrypt(Request $request)
+    {
+        $str=$request->input('str');
+        $lengh=strlen($str);
+        $data="";
+        for($i=0;$i<$lengh;$i++)
+        {
+            $a=ord($str[$i])-3;
+            $chr =chr($a);
+            $data .=$chr;
+        }
+        echo $data;
+    }
+
 }
