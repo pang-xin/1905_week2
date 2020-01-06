@@ -70,8 +70,5 @@ class ApiController extends Controller
         $count=Redis::incr($redis_key);
         echo 'count:'.$count;
     }
-
-    public function a(){
-        
-    }
+    
 }

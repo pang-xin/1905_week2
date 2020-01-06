@@ -22,3 +22,4 @@ Route::prefix('/')->middleware('ApiHeader')->group(function () {
 Route::get('/brush','Api\ApiController@brush');
 Route::post('/index', 'Api\ApiController@index');
 Route::post('/create', 'Api\ApiController@create');
+
